@@ -5,6 +5,7 @@
 // Варіант 23
 #include <iostream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -23,6 +24,10 @@ int main() {
     cin >> xk;
     cout << " dx = ";
     cin >> dx;
+    cout << "-----------------------------" << endl;
+    cout << "|" << setw(7) << "x" << "      |"
+        << setw(9) << "F" << "    |" << endl;
+    cout << "-----------------------------" << endl;
 
     // Обчислення значень функції
     for (double x = xp; x <= xk; x += dx) {
@@ -36,10 +41,12 @@ int main() {
         else if (!(a < 0 && c != 0) && !(a > 0 && c == 0)){
             F = a * (x + c);
         }
+        cout << "|" << setw(12) << setprecision(4) << x
+            << " |" << setw(12) << setprecision(4) << F
+            << " |" << endl;
 
-        // Виведення результатів
-        cout << " x = " << x << ", F = " << F << "\n";
+    
     }
-
+    cout << "-----------------------------" << endl;
     return 0;
 }
